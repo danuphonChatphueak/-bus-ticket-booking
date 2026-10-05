@@ -33,6 +33,15 @@ app.get('/health', (req, res) => {
     });
 });
 
+app.get('/api/debug', (req, res) => {
+    res.json({
+        hasSql: !!process.env.AZURE_SQL_CONNECTION_STRING,
+        hasJwt: !!process.env.JWT_SECRET,
+        sqlValue: process.env.AZURE_SQL_CONNECTION_STRING ? 'Set' : 'Missing',
+        jwtValue: process.env.JWT_SECRET ? 'Set' : 'Missing',
+    });
+});
+
 // ─── API Routes ─────────────────────────────────────────────────────────────
 
 app.use('/api/auth', authRoutes);
