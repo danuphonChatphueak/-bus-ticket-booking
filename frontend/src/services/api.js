@@ -61,7 +61,7 @@ export const bookingApi = {
     getAll: () => fetchApi('/api/bookings'),
     getById: (id) => fetchApi(`/api/bookings/${id}`),
     create: (body) => fetchApi('/api/bookings', { method: 'POST', body: JSON.stringify(body) }),
-    cancel: (id) => fetchApi(`/api/bookings/${id}/cancel`, { method: 'POST' }),
+    cancel: (id) => fetchApi(`/api/bookings/${id}`, { method: 'DELETE' }),
     updateStatus: (id, status) => fetchApi(`/api/bookings/${id}/status`, { method: 'PUT', body: JSON.stringify({ status }) }),
 };
 
