@@ -1,6 +1,8 @@
-// backend/src/config/database.js
 const sql = require('mssql');
 require('dotenv').config();
+
+// Support full connection string or individual credentials
+const connectionString = process.env.AZURE_SQL_CONNECTION_STRING;
 
 const dbConfig = {
     server: process.env.DB_SERVER,
@@ -30,7 +32,11 @@ let pool = null;
 async function getPool() {
     if (pool) return pool;
     try {
-        pool = await sql.connect(dbConfig);
+        if (connectionString) {
+            pool = await sql.connect(connectionString);
+        } else {
+            pool = await sql.connect(dbConfig);
+        }
         console.log('✅ Connected to Azure SQL Database');
         return pool;
     } catch (err) {

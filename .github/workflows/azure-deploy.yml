@@ -64,4 +64,4 @@ jobs:
         with:
           app-name: 'bus-ticket-booking-api' # เปลี่ยนเป็นชื่อ App Service ที่สร้าง
           slot-name: 'Production'
-          package: ./backend-release
+          package: ./backend
