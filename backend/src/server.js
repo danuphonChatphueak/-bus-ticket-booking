@@ -15,9 +15,9 @@ const app = express();
 
 // ─── Middleware ──────────────────────────────────────────────────────────────
 
-// CORS — allow frontend origin from environment variable
+// CORS — allow frontend origin dynamically
 app.use(cors({
-    origin: process.env.FRONTEND_URL || 'http://localhost:5173',
+    origin: true,
     credentials: true,
 }));
 
