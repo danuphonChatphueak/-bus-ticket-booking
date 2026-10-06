@@ -36,7 +36,7 @@ async function getSeatsByTrip(req, res) {
             .input('trip_id', sql.Int, tripId)
             .query(`
                 SELECT s.id, s.seat_number, s.seat_row, s.seat_column,
-                       CASE WHEN bs.id IS NOT NULL THEN 'booked' ELSE 'available' END AS status
+                       CASE WHEN bk.id IS NOT NULL THEN 'booked' ELSE 'available' END AS status
                 FROM dbo.seats s
                 LEFT JOIN dbo.booking_seats bs ON bs.seat_id = s.id AND bs.trip_id = @trip_id
                 LEFT JOIN dbo.bookings bk ON bk.id = bs.booking_id AND bk.status = 'CONFIRMED'

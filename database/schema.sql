@@ -105,9 +105,7 @@ CREATE TABLE dbo.booking_seats (
     id          INT IDENTITY(1,1) PRIMARY KEY,
     booking_id  INT NOT NULL REFERENCES dbo.bookings(id) ON DELETE CASCADE,
     seat_id     INT NOT NULL REFERENCES dbo.seats(id),
-    trip_id     INT NOT NULL REFERENCES dbo.trips(id),
-    -- prevent double-booking the same seat on the same trip
-    CONSTRAINT uq_trip_seat UNIQUE (trip_id, seat_id)
+    trip_id     INT NOT NULL REFERENCES dbo.trips(id)
 );
 
 -- ============================================================
