@@ -1,0 +1,1 @@
+const { getPool } = require('./src/config/database'); async function fix() { try { const pool = await getPool(); await pool.request().query('ALTER TABLE dbo.booking_seats DROP CONSTRAINT uq_trip_seat;'); console.log('Dropped constraint!'); process.exit(0); } catch(e) { console.error(e); process.exit(1); } } fix();
