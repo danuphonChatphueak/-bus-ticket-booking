@@ -126,7 +126,7 @@ INSERT INTO dbo.users (name, email, password_hash, role)
 VALUES (
     N'System Admin',
     'admin@busticket.com',
-    '$2b$12$LQv3c1yqBWVHxkd0LHAkCOYz6TtxMQJqhN8/LewYpfQN8yUHjZNpC',
+    '$2b$12$q7v9oZ4vQgTUT97FcGF2sOi8rJx5Qn/ro/uHv1u.TDSkiUPv8.0Fa',
     'admin'
 );
 
