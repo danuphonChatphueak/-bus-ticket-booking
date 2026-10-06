@@ -26,29 +26,6 @@ export default function Home() {
                 </div>
             </section>
 
-            {/* Features */}
-            <section style={{ padding: '40px 0' }}>
-                <div style={{
-                    display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
-                    gap: 24,
-                    maxWidth: 1000,
-                    margin: '0 auto'
-                }}>
-                    {[
-                        { icon: '', title: 'ค้นหาง่าย', desc: 'ค้นหาเที่ยวรถจากต้นทาง ปลายทาง และวันที่เดินทาง' },
-                        { icon: '', title: 'เลือกที่นั่ง', desc: 'ดูผังที่นั่งและเลือกที่นั่งที่ต้องการได้เลย' },
-                        { icon: '', title: 'รับ E-Ticket', desc: 'รับตั๋วอิเล็กทรอนิกส์พร้อม QR Code ทันที' },
-                        { icon: '', title: 'ใช้งานได้ทุกที่', desc: 'รองรับทุกอุปกรณ์ทั้ง Desktop และ Mobile' },
-                    ].map((f, i) => (
-                        <div key={i} className="card slide-up" style={{ textAlign: 'center', animationDelay: `${i * 0.1}s` }}>
-                            <div style={{ fontSize: '2.5rem', marginBottom: 16 }}>{f.icon}</div>
-                            <h3 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: 8 }}>{f.title}</h3>
-                            <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>{f.desc}</p>
-                        </div>
-                    ))}
-                </div>
-            </section>
 
             {/* CTA */}
             {!isAuthenticated && (
